@@ -1,0 +1,63 @@
+           <section>
+           <br>
+           <br>
+           <br>        
+               <br>
+               <br>
+                    <div>
+                               <div id="form" class="form">
+                    <div>
+                        <div class="card border-light mb-3" style="max-width: 30rem;">
+  <div class="card-header"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><h1>Calificaciones</h1></font></font></div>
+  <div class="card-body">
+    <h4 class="card-title"><font style="vertical-align: inherit;">
+        <font style="vertical-align: inherit;"><a  href="/usuario/resultadoscuest"></i> Calificaciones de cuestionarios</a></font>
+        </font>
+        </h4>
+        <br>
+        <hr>
+        <h4 class="card-title"><font style="vertical-align: inherit;">
+        <font style="vertical-align: inherit;"><a href="/resultadosexm"> Calificaciones de examen</a></font>
+        </font>
+        </h4>
+        <br>
+        <hr>
+    <canvas id="myChart" ></canvas>
+  </div>
+</div>
+                     
+                    </div>
+                </div>
+                
+
+
+{{#each resultadoscuest}}
+
+
+                                <div id="form" class="form">
+                    <div>
+                        <div class="card border-light mb-3" style="max-width: 30rem;">
+  <div class="card-header"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><h1>Resultado de Cuestionario</h1></font></font></div>
+  <div class="card-body">
+    
+        
+        </font>
+        
+        <br>
+        <h2><b class="m-1">Asignatura:{{materia}}</b></h2>                  
+                                    <br>
+        <h3><b class="m-1">Total:{{resultado}}</b></h3>    
+                                    <br>
+            
+    
+  </div>
+</div>
+                     
+                    </div>
+                </div>
+                
+{{/each}}
+
+
+        
+              

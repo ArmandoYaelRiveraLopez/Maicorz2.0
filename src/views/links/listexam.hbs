@@ -1,0 +1,52 @@
+
+    <header>
+        <img class= "logo animate__animated animate__rotateInDownLeft animate__slower" src="/images/NoNeim.png" alt="Error al cargar (Logo de NoNeim)" title="Logo NoNeim">
+        <div class="margin__title">
+            <p title="NoNeim" class= "fuente__title animate__animated animate__bounceInUp animate__slower">NoNeim</p>
+        </div>
+        <nav>
+            <a href="/administrator"><i class="fas fa-user"></i> Usuarios </a>            
+            <a href="/adminexam"> Administrar Examen </a>            
+            <a href="/cuest"> Administrar Cuestionarios </a>  
+            <a href="/stats"> Estadisticas </a>  
+            <a href="/logout"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a> 
+        </nav>
+    </header>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+    <div class="container p-4">
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="row">
+            {{#each resultados}}
+                <div class="col-md-4">
+                    <div class="card text-center">
+                        <div class="card-body">
+                          <h2 class="card-title text-upprecase">
+                              {{Ap_pat}} {{Ap_mat}} {{Nombre}}
+                          </h2>  
+                          <p class="m-1">Total:{{resultado}}</p>
+                          <p class="m-1">Matematicas:{{matematicas}}</p>
+                          <p class="m-1">Español{{espa}}</p>
+                          <p class="m-1">Biologia{{biologia}}</p>
+                          <p class="m-1">Fisica{{fisica}}</p>
+                          <p class="m-1">Quimica{{quimica}}</p>
+                          <p class="m-1">Historia{{historia}}</p>
+                          <p class="m-1">Geografia{{geografia}}</p>
+                          <p class="m-1">Formacion{{formacion}}</p>
+                        </div>
+                    </div>
+                </div>
+            {{/each}}
+
+        </div>
+    </div>
+    

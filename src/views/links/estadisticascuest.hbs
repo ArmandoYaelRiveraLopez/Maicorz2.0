@@ -1,0 +1,117 @@
+<link rel="stylesheet" href="https://bootswatch.com/5/zephyr/bootstrap.min.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <header>
+        <img class= "logo animate__animated animate__rotateInDownLeft animate__slower" src="/images/NoNeim.png" alt="Error al cargar (Logo de NoNeim)" title="Logo NoNeim">
+        <div class="margin__title">
+            <p title="NoNeim" class= "fuente__title animate__animated animate__bounceInUp animate__slower">NoNeim</p>
+        </div>
+        <nav>
+            <a href="/administrator"><i class="fas fa-user"></i> Usuarios </a>            
+            <a href="/adminexam"> Administrar Examen </a>            
+            <a href="/cuest"> Administrar Cuestionarios </a>  
+            <a href="/stats"> Estadisticas </a>  
+            <a href="/logout"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a> 
+        </nav>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+          <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </header>  <br>
+        <br>
+        
+        <br>
+        <br>
+        <br><br>
+        <br>
+        <br>
+        <br>
+    <center>
+    <div class="card border-light mb-3" style="max-width: 30rem;">
+  <div class="card-header"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><h1>Resultados de Cuestionarios</h1></font></font></div>
+  <div class="card-body">
+    <h4 class="card-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Se muestran los resultados de los alumnos en los cuestionarios en general</font></font></h4>
+    <canvas id="myChart" ></canvas>
+  </div>
+</div>
+<center>
+    <div class="form-group">
+                        <br>
+                           <a href="/resultados"><button class="btn btn-success btn-block">Resultados individuales</button></a> 
+                    </div>
+                    <div class="form-group">
+                        <br>
+                           <a href="/stats"><button class="btn btn-success btn-block">Estadisticas de Examen</button></a> 
+                    </div>
+                    </center>
+</center>
+    
+    <form name="form">
+    {{#each cuest}}
+         <input id="usuario" type="text" value="{{resultado}}" hidden>
+    {{/each}}
+    </form>
+
+    
+<script>
+const ctx = document.getElementById('myChart');
+const myForm = document.forms["form"];
+const arreglo = [0,0]
+
+ 
+for(var i = 1 ; i <= myForm.length; i++){
+    if(myForm[i-1].value < 6){
+        arreglo[0] =arreglo[0]+ 1;
+        
+    }else{
+        arreglo[1] =arreglo[1]+ 1;
+    }
+        
+    
+}
+
+const myChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+         labels: [
+    'Reprobados',
+    'Aprobados'
+  ],
+        datasets: [{
+            label: 'Aciertos',
+            data: arreglo,
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+        }
+    }
+});
+</script>

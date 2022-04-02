@@ -1,0 +1,241 @@
+           <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+           <section>
+           <br>
+           <br>
+           <br>        
+               <br>
+               <br>
+                    <div>
+                               <div id="form" class="form">
+                    <div>
+                        <div class="card border-light mb-3" style="max-width: 30rem;">
+  <div class="card-header"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><h1>Calificaciones</h1></font></font></div>
+  <div class="card-body">
+    <h4 class="card-title"><font style="vertical-align: inherit;">
+        <font style="vertical-align: inherit;"><a  href="/usuario/resultadoscuest"></i> Calificaciones de cuestionarios</a></font>
+        </font>
+        </h4>
+        <br>
+        <hr>
+        <h4 class="card-title"><font style="vertical-align: inherit;">
+        <font style="vertical-align: inherit;"><a href="/resultadosexm"> Calificaciones de examen</a></font>
+        </font>
+        </h4>
+        <br>
+        <hr>
+    
+  </div>
+</div>
+                    </div>
+                </div>
+    <form name="form0" hidden>
+    {{#each resultadosexm}}
+         <input id="usuario" type="text" value="{{resultado}}" hidden>
+    {{/each}}
+    </form>
+    <form name="form" hidden>
+    {{#each resultadosexm}}
+         <input id="usuario" type="text" value="{{matematicas}}" hidden>
+    {{/each}}
+    </form>
+    <form name="form1" hidden>
+    {{#each resultadosexm}}
+         <input id="usuario" type="text" value="{{espa}}" hidden>
+    {{/each}}
+    </form>
+    <form name="form2" hidden>
+    {{#each resultadosexm}}
+         <input id="usuario" type="text" value="{{biologia}}" hidden>
+    {{/each}}
+    </form>
+    <form name="form3" hidden>
+    {{#each resultadosexm}}
+         <input id="usuario" type="text" value="{{fisica}}" hidden>
+    {{/each}}
+    </form>
+    <form name="form4" hidden>
+    {{#each resultadosexm}}
+         <input id="usuario" type="text" value="{{quimica}}" hidden>
+    {{/each}}
+    </form>
+    <form name="form5" hidden>
+    {{#each resultadosexm}}
+         <input id="usuario" type="text" value="{{historia}}" hidden>
+    {{/each}}
+    </form>
+    <form name="form6" hidden>
+    {{#each resultadosexm}}
+         <input id="usuario" type="text" value="{{geografia}}" hidden>
+    {{/each}}
+    </form>
+    <form name="form7" hidden>
+    {{#each resultadosexm}}
+         <input id="usuario" type="text" value="{{formacion}}" hidden>
+    {{/each}}
+    </form>
+                                
+                                <div id="form" class="form">
+                    <div>
+                        <div class="card border-light mb-3" style="max-width: 30rem;">
+  <div class="card-header"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><h1>Desempeño en examenes</h1></font></font></div>
+  <div class="card-body">
+        
+        <canvas id="myChart" ></canvas>
+  </div>
+</div>
+                    </div>
+                </div>
+{{#each resultadosexm}}
+
+
+                                <div id="form" class="form">
+                    <div>
+                        <div class="card border-light mb-3" style="max-width: 30rem;">
+  <div class="card-header"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><h1>Resultado de examen</h1></font></font></div>
+  <div class="card-body">
+        <br>
+                                    
+                                    <h3><b class="m-1">Total:{{resultado}}</b></h3>
+                                    <br>
+                                    
+                                    <b class="m-1">Matematicas: {{matematicas}}</b>
+                                    <br>
+                                    <b class="m-1">Español: {{espa}}</b>
+                                    <br>
+                                    <b class="m-1">Biologia: {{biologia}}</b>
+                                    <br>
+                                    <b class="m-1">Fisica: {{fisica}}</b>
+                                    <br>
+                                    <b class="m-1">Quimica: {{quimica}}</b>
+                                    <br>
+                                    <b class="m-1">Historia: {{historia}}</b>
+                                    <br>
+                                    <b class="m-1">Geografia: {{geografia}}</b>
+                                    <br>
+                                    <b class="m-1">Formacion: {{formacion}}</b>
+                                    <br>
+  </div>
+</div>              
+                    </div>
+                </div>
+                
+{{/each}}
+ 
+         <script>
+const ctx = document.getElementById('myChart');
+const arreglo = [0,0,0,0,0,0,0,0]
+const variable = [0];
+
+const mate = document.forms["form"];
+    for(var i = 1 ; i <= mate.length; i++){
+        console.log(arreglo[0])
+        arreglo[0] = (arreglo[0] - mate[i-1].value);
+    }
+    arreglo[0] = arreglo[0]*-1;
+    arreglo[0] =  arreglo[0] / mate.length;
+
+const espa = document.forms["form1"];
+    for(var i = 1 ; i <= espa.length; i++){
+        arreglo[1] = (arreglo[1] - espa[i-1].value);
+    }
+    arreglo[1] = arreglo[1]*-1;
+    arreglo[1] =  arreglo[1] / espa.length;
+
+const bio = document.forms["form2"];
+    for(var i = 1 ; i <= bio.length; i++){
+        arreglo[2] = (arreglo[2] - bio[i-1].value);
+    }
+    arreglo[2] = arreglo[2] *-1;
+    arreglo[2] =  arreglo[2] / bio.length;
+
+const fisi = document.forms["form3"];
+    for(var i = 1 ; i <= fisi.length; i++){
+        arreglo[3] = (arreglo[3] - fisi[i-1].value);
+    }
+    arreglo[3] = arreglo[3] *-1;
+    arreglo[3] =  arreglo[3] / fisi.length;
+
+const quimi = document.forms["form4"];
+    for(var i = 1 ; i <= quimi.length; i++){
+        arreglo[4] = (arreglo[4] - quimi[i-1].value);
+    }
+    arreglo[4] = arreglo[4] *-1;
+    arreglo[4] = arreglo[4] / quimi.length;
+
+const hist = document.forms["form5"];
+    for(var i = 1 ; i <= hist.length; i++){
+        arreglo[5] = (arreglo[5] - hist[i-1].value);
+    }
+    arreglo[5] = arreglo[5] *-1;
+    arreglo[5] = arreglo[5] / hist.length;
+
+const geo = document.forms["form6"];
+    for(var i = 1 ; i <= geo.length; i++){
+        arreglo[6] = (arreglo[6] - geo[i-1].value);
+    }
+    arreglo[6] = arreglo[6] *-1;
+    arreglo[6] = arreglo[6] / geo.length;
+
+const form = document.forms["form7"];
+    for(var i = 1 ; i <= form.length; i++){
+        arreglo[7] = (arreglo[7] - form[i-1].value);
+        
+    }
+    arreglo[7] = arreglo[7] *-1;
+    arreglo[7] = arreglo[7] / form.length;
+
+
+const prom = document.forms["form0"];
+    for(var i = 1 ; i <= prom.length; i++){
+        variable[0] = (variable[0] - prom[i-1].value);        
+    }
+
+    
+    variable[0] = variable[0] *-1;
+    variable[0] = variable[0] / prom.length;
+
+const myChart = new Chart(ctx, {
+    type: 'polarArea',
+    data: {
+         labels: [
+    'Matematicas',
+    'Español',
+    'Biologia',
+    'Fisica',
+    'Quimica',
+    'Historia',
+    'Geografia',
+    'Formacion'
+  ],
+        datasets: [{
+            label: 'Aciertos',
+            data: arreglo,
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.5)',
+                'rgba(54, 162, 235, 0.5)',
+                'rgba(255, 206, 86, 0.5)',
+                'rgba(75, 192, 192, 0.5)',
+                'rgba(153, 102, 255, 0.5)',
+                'rgba(255, 159, 64, 0.5)',
+                'rgba(0, 255, 255, 0.5)',
+                'rgba(255, 255, 0, 0.5)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)',
+                'rgba(0, 255, 255, 1)',
+                'rgba(255, 255, 0, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+        }
+    }
+});
+</script>

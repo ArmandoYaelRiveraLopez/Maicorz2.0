@@ -1,0 +1,88 @@
+
+<br>
+        <br>
+    <br>
+        <br>
+    
+    <section>
+      
+       
+        <form method="post" name="registroalumno" action="/signup" id="formS">
+            <div class="form">
+                <p class="title2">Registro</p>
+                <div class="grupo" id="grupo__nombre">
+                    <input type="text" id="Nombre" name="Nombre" onkeypress="return validarn(event)" pattern="[A-z]{3,15}" title="Ingresa tu nombre ejemplo:Pablito" required><span class="barra"></span>
+                    <label class="label1" for="">Nombre</label>
+                </div>
+                <div class="grupo">
+                    <input type="text" id="Ap_pat" name="Ap_pat" onkeypress="return validarn(event)" pattern="[A-z]{3,15}" title="Ingresa tu nombre ejemplo:Sanchez" required><span class="barra"></span>
+                    <label class="label1" for="">Apellido<br>Paterno</label>
+                </div>
+                <div class="grupo">
+                    <input type="text" id="Ap_mat" name="Ap_mat" onkeypress="return validarn(event)" pattern="[A-z]{3,15}" title="Ingresa tu nombre ejemplo:Sanchez" required><span class="barra"></span>
+                    <label class="label1" for="">Apellido<br>Materno</label>
+                </div>
+                <div class="grupo">
+                    <input type="email" id="correo" name="correo"  title="Ingresa tu correo ejemplo:email@gmail.com" required><span class="barra"></span>
+                    <label class="label1" for="">Correo</label>
+                </div>
+                <div class="grupo">
+                    <input type="text" id="username" name="username" onkeypress="return validarn(event)" pattern="[A-z]{3,15}" title="Ingresa tu usuario ejemplo:JoseSM" required><span class="barra"></span>
+                    <label class="label1" for="">Usuario</label>
+                </div>
+                <div class="grupo">
+                    <input type="password" id="password" name="password" onkeypress="return validarn2(event)" title="Ingresa tu contraseña puede ser asi AbcdE12.," required><span class="barra"></span>
+                    <label class="label1" for="">Contraseña</label>
+                </div>
+                
+                    <input type="radio" id="html" name="type_user" value="profesor"  id="type_user">
+                    <label for="html">profesor</label><br>
+                    <input type="radio" id="css" name="type_user" value="alumno"  id="type_user">
+                    <label for="css">alumno</label><br>
+               
+                <button class="button" type="submit">Registrar</button>
+                </div>
+            <br>
+            <br>
+            <b>Al dar click en registrarse usted acepta nuestra Política de Privacidad</b>
+            <br>
+            <u><a href="javascript:abrir()" class="aparecer"><b>Ver Políticas de Privacidad de NoNeim <i class="fas fa-hand-spock"></i></b></a></u>
+            <div class="ventana" id="vent">
+                <p class="justificado">
+                    POLÍTICA DE PRIVACIDAD DE NoNeim
+                    <br>
+                    Última actualización: 25 de noviembre del 2021
+                    <br>
+                    Esta política de privacidad ("Política de privacidad") se aplica al servicio de NoNeim ("Servicio") proporcionado por NoNeim. Una empresa 100% mexicana. NoNeim se compromete a salvaguardar los datos personales de los Usuarios y visitantes del Sitio ("NoNeim").
+                    <br>
+                    Al usar el sitio, los usuarios y visitantes aceptan cumplir y estar sujetos a esta política de privacidad, que puede modificarse o actualizarse de vez en cuando sin previo aviso, excepto en el caso de estipulaciones que requieran el consentimiento de los usuarios. En este caso, la actualización se mostrará en el Sitio.
+                    <br>
+                    Tratamiento de datos personales de usuarios y visitantes, NoNeim recopila y procesa los datos personales de los Usuarios de manera justa y legal y respetando sus derechos. NoNeim es la entidad responsable del tratamiento de los datos personales de los Usuarios y Visitantes.
+                    <br>
+                    Naturaleza de los datos personales recopilados por NoNeim
+                    <br>
+                    NoNeim recopila y procesa los datos que los Usuarios proporcionan voluntariamente para acceder o utilizar su Servicio y los datos relacionados con las preferencias y el tráfico de los Usuarios. El propósito de este procesamiento de datos es proporcionar un servicio para realizar diversas actividades de ámbito escolar. Los usuarios deben abrir una Cuenta y proporcionar a NoNeim al menos los siguientes datos de identificación personal para utilizar los Servicios: Apellido, nombre, correo electrónico, un usuario único y su contraseña.
+                    <br>
+                    NoNeim nunca recopilará ni procesará datos personales relacionados, directa o indirectamente, con la raza, la salud, la orientación sexual, los puntos de vista políticos, filosóficos o religiosos o con categorías especiales de Datos personales.
+                    <br>
+                    Conservación de los datos personales de los usuarios
+                    <br>
+                    Seguridad
+                    <br>
+                    Los datos personales que los Usuarios comunican a NoNeim son alojados en una base de datos, no obstante, los datos sensibles son cifrados para su mayor protección. NoNeim se compromete a tomar todas las precauciones necesarias para preservar la seguridad de los Datos Personales procesados y, en particular, para evitar que sean distorsionados, dañados o comunicados a personas no autorizadas.
+                    <br><br>
+                    <u><a href="javascript:cerrar()"><b>Aceptar <i class="fas fa-hand-spock"></i></b></a></u>
+                </p>
+            </div>               
+        </form>
+      <img class="images_form  animate__animated animate__zoomInLeft animate__slow " src="images/unDraw/password.svg" alt="Error al cargar la imagen" title="Registro">
+    
+         <script>
+        function abrir(){
+            document.getElementById("vent").style.display="block";
+        } 
+        function cerrar(){
+            document.getElementById("vent").style.display="none";
+        }
+    </script>
+    </section>

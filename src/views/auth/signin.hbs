@@ -1,0 +1,26 @@
+
+    <section>
+        <div id="form" class="form">
+            <form method="post" action="/signin"  id="formS">
+           
+                    <p class="title2">Iniciar Sesión</p>
+                    <div class="grupo" id="grupo__nombre">
+                        <input type="text" name="username" id="username" onkeypress="return validarn(event)" pattern="[A-z]{3,15}" title="Ingresa tu usuario ejemplo:JoseSM" required><span class="barra"></span>
+                        <label class="label1" for="">Usuario</label>
+                    </div>
+                    <div class="grupo">
+                        <input type="password" name="password" onkeypress="return validarn2(event)"  required><span class="barra"></span>
+                        <label class="label1" for="">Contraseña</label>
+                    </div>
+                    <button class="button" onclick="validarlog()">Iniciar Sesion</button>
+                    
+               
+            </form>
+            <img class="images_form animate__animated animate__zoomInLeft animate__slow" src="images/unDraw/login.svg" alt="Error al cargar la imagen" title="Iniciar Sesión">
+            
+        </div>
+     
+    </section>
+    <footer></footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="scripts/script.js"></script>

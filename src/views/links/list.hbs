@@ -1,0 +1,50 @@
+<link rel="stylesheet" href="https://bootswatch.com/5/zephyr/bootstrap.min.css">
+    <header>
+        <img class= "logo animate__animated animate__rotateInDownLeft animate__slower" src="/images/NoNeim.png" alt="Error al cargar (Logo de NoNeim)" title="Logo NoNeim">
+        <div class="margin__title">
+            <p title="NoNeim" class= "fuente__title animate__animated animate__bounceInUp animate__slower">NoNeim</p>
+        </div>
+        <nav>
+            <a href="/administrator"><i class="fas fa-user"></i> Usuarios </a>            
+            <a href="/adminexam"> Administrar Examen </a>            
+            <a href="/cuest"> Administrar Cuestionarios </a>  
+            <a href="/stats"> Estadisticas </a>  
+            <a href="/logout"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a> 
+        </nav>
+    </header>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+       
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">username</th>
+      <th scope="col">Apellido Paterno</th>
+      <th scope="col">Apellido Materno</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Correo</th>
+      <th scope="col">Borrar</th>
+    </tr>
+  </thead>
+  {{#each usuarios}}
+  <tbody>
+    <tr class="table-light">
+      <th scope="row">{{username}}</th>
+      <td>{{Ap_pat}}</td>
+      <td>{{Ap_mat}}</td>
+      <td>{{Nombre}}</td>
+      <td>{{correo}}</td>
+      <td><a href="/deleteuser/{{username}}" class="btn btn-danger">Eliminar</a></td>
+    </tr>
+  </tbody>
+  {{/each}}
+</table>
+    

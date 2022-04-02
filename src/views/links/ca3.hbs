@@ -1,0 +1,53 @@
+<link rel="stylesheet" href="https://bootswatch.com/5/zephyr/bootstrap.min.css">
+<br>
+        <br>
+     
+        <center>
+            
+       <form name="form">
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Pregunta</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col">Incisos</th>
+      <th scope="col"></th>
+      <th scope="col">Respuesta</th>
+    </tr>
+  </thead>
+  {{#each exam}}
+  <tbody>
+    <tr class="table-active">
+      <td>{{Pregunta}}</td>
+      <td>{{A}}</td>
+      <td>{{B}}</td>
+      <td>{{C}}</td>
+      <td>{{D}}</td>
+      <td>
+      <select id="{{@index}}" class="btn btn-dark">
+        <option value="a">A</option>
+        <option value="b">B</option>
+        <option value="c">C</option>
+        <option value="d">D</option>
+      </select>
+      </td>
+    </tr>
+  </tbody>
+  {{/each}}
+  
+</table>
+
+</form>
+<br>
+<br>
+<center>
+                     <form method="post" id="rc1" name="rc1" hidden>
+                        <input type="text" name="cuadrito" id="cuadrito" readonly hidden>            
+                    </form>
+                    <button class="btn btn-success btn-block" onclick="verificarRespuestaCu3()">Finalizar</button>
+                    
+</center>
+<br>
+<br>
+</center>
